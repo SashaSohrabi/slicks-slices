@@ -25,6 +25,7 @@ dist/
 
 # JetBrains IDE
 .idea/
+.vscode/
 
 # Unit test reports
 TEST*.xml
@@ -47,4 +48,14 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+
+# Build Path of Test Fixtures
+test/**/public
+.gatsby-context.js
+.DS_Store
+public/
+e2e-tests/gatsby-pnp/
+.cache/
+.netlify
+.Rhistory
 
