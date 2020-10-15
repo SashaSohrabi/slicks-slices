@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../components/Layout';
 
 export default function BeersPage() {
   return (
-    <div>
+    <Layout>
       <p>Beer Page</p>
-    </div>
+    </Layout>
   );
 }
