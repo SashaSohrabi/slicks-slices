@@ -22,15 +22,15 @@ export default {
       options: {
         layout: 'checkbox'
       }
-    },
+    }
   ],
   preview: {
     select: {
       name: 'name',
       vegetarian: 'vegetarian'
     },
-    prepare: ({name, vegetarian}) => ({
-      title: `${name} ${vegetarian ? 'Ⓥ' : ''}`
-    }),
+    prepare: ({ name, vegetarian }) => ({
+      title: `${name} ${vegetarian ? '🌱' : ''}`
+    })
   }
 };
