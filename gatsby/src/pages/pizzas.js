@@ -28,7 +28,10 @@ export const query = graphql`
         price
         image {
           asset {
-            fluid(maxWidth: 100) {
+            fixed(width: 200, height: 200) {
+              ...GatsbySanityImageFixed
+            }
+            fluid(maxWidth: 400) {
               ...GatsbySanityImageFluid
             }
           }
