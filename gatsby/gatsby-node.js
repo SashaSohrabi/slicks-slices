@@ -30,11 +30,43 @@ async function turnPizzasIntoPages({ graphql, actions }) {
   });
 }
 
-// Create blog pages dynamically
+async function turnToppingsIntoPages({ graphql, actions }) {
+  // 1. Get the template
+  const toppingTemplate = path.resolve('./src/pages/pizzas.js');
+  // 2. Query all the toppings
+  const { data } = await graphql(`
+    query {
+      toppings: allSanityTopping {
+        nodes {
+          name
+          id
+        }
+      }
+    }
+  `);
+
+  // 3. createPage for that topping
+  data.toppings.nodes.forEach(topping => {
+    actions.createPage({
+      path: `topping/${topping.name}`,
+      component: toppingTemplate,
+      context: {
+        topping: topping.name,
+        // TODO Regex from Topping
+      },
+    });
+  });
+  // 4. Pass topping data to pizza.js
+}
+
 exports.createPages = async params => {
   // Create pages dynamically
+  // Wait fro all promises to be resolved before finishing this function
+  await Promise.all([
+    turnPizzasIntoPages(params),
+    turnToppingsIntoPages(params),
+  ]);
   // 1. Pizzas
-  await turnPizzasIntoPages(params);
   // 2. Toppings
   // 3. Slice masters
 };
