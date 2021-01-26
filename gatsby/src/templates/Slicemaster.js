@@ -3,8 +3,6 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 export default function SlicemasterPage({ data: { person } }) {
-  console.clear();
-  console.log(person);
   return (
     <div className="center">
       <Img fluid={person.image.asset.fluid} />
