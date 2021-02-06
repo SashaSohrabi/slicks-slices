@@ -44,7 +44,15 @@ function wait(ms = 0) {
 exports.handler = async (event, context) => {
   await wait(1000);
   const body = JSON.parse(event.body);
-  console.log(body);
+  // Check if they have filled out the honeypot
+  if (body.mapleSyrup) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: 'Robot detected!',
+      }),
+    };
+  }
   // Validate the data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
 
