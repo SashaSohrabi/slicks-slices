@@ -28,7 +28,6 @@ export default function usePizza({ pizzas, values }) {
 
   async function submitOrder(e) {
     e.preventDefault();
-    console.log(e);
     setLoading(true);
     setError(null);
     setMessage(null);
@@ -54,10 +53,10 @@ export default function usePizza({ pizzas, values }) {
 
     // Check if everything worked
     if (res.status >= 400 && res.status < 600) {
-      setLoading(flase);
+      setLoading(false);
       setError(text.message);
     } else {
-      setLoading(flase);
+      setLoading(false);
       setMessage('Success! Come on down for you pizza');
     }
   }
