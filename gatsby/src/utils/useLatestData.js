@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-const gql = String.raw;
-
 const deets = `
     name
     _id
@@ -34,10 +32,10 @@ export default function useLatestData() {
             StoreSettings(id: "downtown") {
               name
               slicemaster {
-                name
+                ${deets}
               }
               hotSlices {
-               name
+                ${deets}
               }
             }
           }

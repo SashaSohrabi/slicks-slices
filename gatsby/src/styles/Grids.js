@@ -47,6 +47,6 @@ export const ItemStyles = styled.div`
       var(--background) 80px
     );
     background-size: 500px;
-    /* animation: shine 1s infinite linear; */
+    animation: shine 1s infinite linear;
   }
 `;
