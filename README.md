@@ -4,7 +4,7 @@ A Gatsby + Sanity app for a pizza restaurant.
 
 ## 🌐 Live Demo
 
-[Click here to view the deployed app]([https://your-live-link.com](https://modest-sinoussi-b26be1.netlify.app/))
+[Click here to view the deployed app]([https://your-live-link.com](https://modest-sinoussi-b26be1.netlify.app/)
 
 ## 📁 Project Structure
 
